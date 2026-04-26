@@ -39,7 +39,7 @@ sudo systemctl status wazuh-manager
 sudo systemctl status wazuh-agent
 ```
 - List connected agents (Debian)
-```bash
+```bash <br>
 sudo /var/ossec/bin/agent_control -l
 ```
 <sub>Expected Output</sub>
