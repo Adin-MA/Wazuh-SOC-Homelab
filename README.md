@@ -55,11 +55,11 @@ sudo tail -f /var/ossec/logs/alerts/alerts.log
 sudo tail -f /var/ossec/logs/ossec.log
 ```
 - Restart Service <br>
-  <sub>- Manager (Debian)</sub>  
+  <sub>Manager (Debian)</sub>  
 ```bash
 sudo systemctl restart wazuh-manager
 ```
-  <sub>- Agent (Ubuntu)</sub>
+  <sub>Agent (Ubuntu)</sub>  
 ```bash
 sudo systemctl restart wazuh-agent
 ```
