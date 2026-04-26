@@ -13,8 +13,11 @@ To build a basic SIEM environment for:
 ---
 
 ## Tools Used
-- Wazuh (SIEM platform)
+- :contentReference[oaicite:0]{index=0} Wazuh (SIEM platform)
 - Wazuh Agent (endpoint monitoring)
+- Wazuh Server / Manager
+- Agent Endpoint
+- Virtual Lab Environment
 
 ---
 
