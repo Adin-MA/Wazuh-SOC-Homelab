@@ -39,7 +39,7 @@ sudo systemctl status wazuh-manager
 sudo systemctl status wazuh-agent
 ```
 - List connected agents (Debian)
-```bash <br>
+```bash 
 sudo /var/ossec/bin/agent_control -l
 ```
 <sub>Expected Output</sub>
@@ -59,7 +59,7 @@ sudo tail -f /var/ossec/logs/ossec.log
 ```bash
 sudo systemctl restart wazuh-manager
 ```
-  <sub>Agent (Ubuntu)</sub>  
+   <sub>Agent (Ubuntu)</sub>  
 ```bash
 sudo systemctl restart wazuh-agent
 ```
