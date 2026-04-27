@@ -31,17 +31,15 @@ Endpoint (Ubuntu) → Wazuh Agent → Wazuh Server (Debian) → Alerts & Log Ana
 
 ## Wazuh Basic Command 
 - Check Wazuh Manager status (Debian)
-```bash
-sudo systemctl status wazuh-manager
-```
+<pre>```bash
+sudo systemctl status wazuh-manager 
+```</pre>
 - Check Wazuh Agent status (Ubuntu)
 ```bash
 sudo systemctl status wazuh-agent
 ```
 - List connected agents (Debian)
-```bash 
-sudo /var/ossec/bin/agent_control -l
-```
+bash sudo /var/ossec/bin/agent_control -l
 <sub>Expected Output</sub>
 ```bash
 Active ubuntu-agent
@@ -71,7 +69,7 @@ sudo systemctl restart wazuh-agent
 ## Current Status
 🚧 Setup completed (Basic lab environment running).
 
-Last updated: 26 April 2026
+Last updated: 27 April 2026
 
 ---
 
