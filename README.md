@@ -74,7 +74,7 @@ sudo tail -f /var/ossec/logs/alerts/alerts.log
 
 ## Demo
 
-[Add screenshot / GIF here]
+(Screenshot will be added)
 
 Example:
 - Multiple failed SSH login attempts detected
