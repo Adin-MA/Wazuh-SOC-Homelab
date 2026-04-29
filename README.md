@@ -40,7 +40,7 @@ Endpoint (Ubuntu) → Wazuh Agent → Wazuh Server (Debian) → Alerts & Log Ana
 ## Current Status
 🚧 Setup completed (Basic lab environment running).
 
-Last updated: 27 April 2026
+Last updated: 29 April 2026
 
 ---
 
