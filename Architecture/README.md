@@ -2,7 +2,7 @@
 
 This SIEM lab uses Wazuh as the main security monitoring platform.
 
-![Wazuh Architecture](Architecture.png)
+![Wazuh Architecture](../Assets/Architecture/Architecture.png)
 
 ## Components
 - Wazuh Server: log collection, analysis, and alerting
