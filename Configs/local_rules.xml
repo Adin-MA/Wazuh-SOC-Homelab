@@ -1,0 +1,8 @@
+<group name="authentication,bruteforce">
+
+  <rule id="2502" level="13" overwrite="yes">
+    <if_sid>5760</if_sid>
+    <description>SSH Brute Force detection (Custom Level)</description>
+  </rule>
+
+</group>
