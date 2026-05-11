@@ -69,6 +69,21 @@ sudo tail -f /var/ossec/logs/alerts/alerts.log
 
 ## Screenshots
 
+- Wazuh Manager Status
+<p align="center"> 
+ <img src="Assets/Main/Wazuh-Manager.png" width="800"/>
+</p>
+
+- Wazuh Agent Status
+<p align="center"> 
+ <img src="Assets/Main/Wazuh-Agent.png" width="800"/>
+</p>
+
+- Wazuh Agent Connecting Status by Manager
+<p align="center"> 
+ <img src="Assets/Main/Agent-Control.png" width="800"/>
+</p>
+
 - Wazuh Real-time Logs
 <p align="center"> 
  <img src="Assets/Main/Wazuh-Alert.png" width="800"/>
