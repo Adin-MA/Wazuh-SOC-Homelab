@@ -1,13 +1,21 @@
 ## Wazuh Basic Command 
-- Check Wazuh Manager status (Debian)
+- Check Wazuh Manager status (Manager)
 ```bash
 sudo systemctl status wazuh-manager 
 ```
-- Check Wazuh Agent status (Ubuntu)
+- Check Wazuh Agent status (Agent)
 ```bash
 sudo systemctl status wazuh-agent
 ```
-- List connected agents (Debian)
+- Add New Agent (Manager)
+```bash
+sudo /var/ossec/bin/manage_agents
+```
+- Import Key Agent (Agent)
+```bash
+  sudo /var/ossec/bin/manage_agents
+```
+- List connected agents (Manager)
 ```bash
 sudo /var/ossec/bin/agent_control -l
 ```
