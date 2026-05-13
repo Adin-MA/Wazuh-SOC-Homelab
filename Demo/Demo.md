@@ -9,18 +9,18 @@ This section demonstrates basic Wazuh SIEM operations including monitoring, rule
 <p align="left"> 
  <img src="../Assets/Demo/Multipled-Failed-SSH-Login-Attemps-By-Attacker.png" width="800"/>
 </p>
-Attacker attack Wazuh Agent Server via SSH
+Attempts multiple SSH login attacks against the Wazuh Agent server
 
-### Alert Trigger
+### Alert Trigger in Wazuh
 <p align="left"> 
  <img src="../Assets/Demo/Alert-Triggered-In-Wazuh.png" width="800"/>
 </p>
-Wazuh manager trigger alert and send Active response to Wazuh Agent
+Wazuh Manager detected suspicious activity, trigger an alert and sends an active response to the Wazuh Agent
 
 ### IP Blocked by Agent
 <p align="left"> 
  <img src="../Assets/Demo/IP-Blocked-By-Agent.png" width="800"/>
 </p>
-Wazuh Agent block attacker IP
+Wazuh Agent automatically blocks the attacker's IP address using active response 
 
 ---
