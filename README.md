@@ -22,7 +22,7 @@ To build a basic SIEM environment for:
 ---
 
 ## Architecture
-See `/architecture` folder for full system diagram.
+See `/Architecture` folder for full system diagram.
 
 Flow:
 Endpoint (Ubuntu) → Wazuh Agent → Wazuh Server (Debian) → Alerts & Log Analysis
@@ -97,7 +97,7 @@ sudo tail -f /var/ossec/logs/alerts/alerts.log
 - SIEM detection
 - Automated IP blocking
 
-More Screenshoot and walkthrough availabel in /demo
+More Screenshoot and walkthrough availabel in '/demo'
 
 ---
 
