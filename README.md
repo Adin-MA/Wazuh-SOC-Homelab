@@ -97,7 +97,7 @@ sudo tail -f /var/ossec/logs/alerts/alerts.log
 - SIEM detection
 - Automated IP blocking
 
-More Screenshoot and walkthrough availabel in '/demo'
+More Screenshoot and walkthrough availabel in `/demo`
 
 ---
 
