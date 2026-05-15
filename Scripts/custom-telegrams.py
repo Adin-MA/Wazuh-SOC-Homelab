@@ -16,7 +16,7 @@ rule_id= alert_json.get('rule', {}).get('id')
 
 raw_time = alert_json.get('timestamp') or alert_json.get('@timestamp')
 try: 
-  dt datetime.strptime(raw_time.split('.')[0], "%Y-%m-%dT%H:%M:%S") 
+  dt = datetime.strptime(raw_time.split('.')[0], "%Y-%m-%dT%H:%M:%S") 
   time_str = dt.strftime("%Y-%m-%d %H:%M:%S") 
 except:
   time_str = raw_time
