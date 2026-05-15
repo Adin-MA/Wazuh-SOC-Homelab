@@ -1,6 +1,6 @@
 import sys
 import json
-import request
+import requests
 from datetime import datetime
 
 alert_file = open(sys.argv[1])
@@ -19,7 +19,7 @@ try:
   dt datetime.strptime(raw_time.split('.')[0], "%Y-%m-%dT%H:%M:%S") 
   time_str = dt.strftime("%Y-%m-%d %H:%M:%S") 
 except:
-  time str = raw time
+  time_str = raw_time
 
 src_ip = (
   alert_json.get('data', ()).get('srcip') 
