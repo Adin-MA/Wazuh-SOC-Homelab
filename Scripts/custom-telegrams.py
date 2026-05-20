@@ -34,11 +34,11 @@ msg += f"Rule ID      : {rule_id}\n"
 msg += f"Time         : {time_str}\n"
 msg += f"Description:\n{description}\n"
 
-if description == "SSH Brute Force detection (L1)": 
+if "L1" in description: 
   msg += "\n STATUS: IP BLOCKED 1 MINUTES BY IPTABLES"
-elif description == "SSH Brute Force detection (L2)": 
+elif "L2" in description: 
   msg += "\n STATUS: IP BLOCKED 1 HOUR BY IPTABLES"
-elif description == "SSH Brute Force detection (L3)": 
+elif "L3" in description: 
   msg += "\n STATUS: IP BLOCKED PERMANENT BY IPTABLES"
 
 
