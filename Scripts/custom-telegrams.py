@@ -32,7 +32,7 @@ if "bruteforce" in groups:
   msg = f"SSH Alert (Level {alert_level})\n\n"
   msg += f"Source IP  : {src_ip}\n"
   chat_id = "YOUR_GROUP_SSH_CHAT_ID_BOT"
-elif "Root" in group:
+elif "Root" in groups:
   msg = f"Root Activity Alert (Level {alert_level})\n\n"
   chat_id = "YOUR_GROUP_Root_Activity_CHAT_ID_BOT"
 
