@@ -12,6 +12,7 @@ alert_file.close()
 alert_level = alert_json.get('rule', {}).get('level')
 description = alert_json.get('rule', {}).get('description')
 agent_name = alert_json.get('agent', {}).get('name')
+groups = alert_json["rule"]["groups"]
 rule_id= alert_json.get('rule', {}).get('id')
 
 raw_time = alert_json.get('timestamp') or alert_json.get('@timestamp')
@@ -27,11 +28,11 @@ src_ip = (
   or "Unknown"
 )
 
-if "SSH" in description:
+if "bruteforce" in groups:
   msg = f"SSH Alert (Level {alert_level})\n\n"
   msg += f"Source IP  : {src_ip}\n"
   chat_id = "YOUR_GROUP_SSH_CHAT_ID_BOT"
-elif "Root" in description:
+elif "Root" in group:
   msg = f"Root Activity Alert (Level {alert_level})\n\n"
   chat_id = "YOUR_GROUP_Root_Activity_CHAT_ID_BOT"
 
@@ -40,11 +41,11 @@ msg += f"Rule ID      : {rule_id}\n"
 msg += f"Time         : {time_str}\n"
 msg += f"Description:\n{description}\n"
 
-if "L1" in description: 
+if rule_id = "100100": 
   msg += "\n STATUS: IP BLOCKED 1 MINUTES BY IPTABLES"
-elif "L2" in description: 
+elif rule_id = "100101": 
   msg += "\n STATUS: IP BLOCKED 1 HOUR BY IPTABLES"
-elif "L3" in description: 
+elif rule_id = "100102": 
   msg += "\n STATUS: IP BLOCKED PERMANENT BY IPTABLES"
 
 payload = {
