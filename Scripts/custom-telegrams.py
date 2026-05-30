@@ -27,9 +27,15 @@ src_ip = (
   or "Unknown"
 )
 
-msg = f"⚠️ Wazuh Alert (Level {alert_level})\n\n"
+if "SSH" in description:
+  msg = f"SSH Alert (Level {alert_level})\n\n"
+  msg += f"Source IP  : {src_ip}\n"
+  chat_id = "YOUR_GROUP_SSH_CHAT_ID_BOT"
+elif "Root" in description:
+  msg = f"Root Activity Alert (Level {alert_level})\n\n"
+  chat_id = "YOUR_GROUP_Root_Activity_CHAT_ID_BOT"
+
 msg += f"Agent        : {agent_name}\n"
-msg += f"Source IP  : {src_ip}\n"
 msg += f"Rule ID      : {rule_id}\n"
 msg += f"Time         : {time_str}\n"
 msg += f"Description:\n{description}\n"
@@ -40,9 +46,6 @@ elif "L2" in description:
   msg += "\n STATUS: IP BLOCKED 1 HOUR BY IPTABLES"
 elif "L3" in description: 
   msg += "\n STATUS: IP BLOCKED PERMANENT BY IPTABLES"
-
-
-chat_id = "YOUR_CHAT_ID_BOT"
 
 payload = {
   "chat_id": chat_id,
