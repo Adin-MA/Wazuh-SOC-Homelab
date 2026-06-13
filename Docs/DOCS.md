@@ -1,5 +1,5 @@
-# Wazuh Basic Command 
-Basic Command for using Wazuh
+# Basic Command Wazuh and IP Tables
+Basic Command for using Wazuh and IP Tables
 
 ---
 
@@ -50,10 +50,13 @@ Active ubuntu-agent
 
 ## Wazuh Monitoring and Logs
 - View Real-time Alerts
+
 ```bash
 sudo tail -f /var/ossec/logs/alerts/alerts.log
 ```
+
 - View Manager Logs
+
 ```bash
 sudo tail -f /var/ossec/logs/ossec.log
 ```
@@ -63,14 +66,27 @@ sudo tail -f /var/ossec/logs/ossec.log
 ## Wazuh Configuration
 
 - Wazuh Configuration
+
 ```bash
 sudo nano /var/ossec/etc/ossec.conf
 ```
+
 - Wazuh Custom Rules
+
 ```bash
 sudo nano /var/ossec/etc/rules/local_rules.xml
 ```
+
 - Wazuh Integration Telegram
+
 ```bash
 sudo nano /var/ossec/integrations/custom-telegrams
 ```  
+
+## IP Tables Basic Command
+
+### - Check IP Blocked by IP Tables
+
+```bash
+sudo iptables -L -n
+```
