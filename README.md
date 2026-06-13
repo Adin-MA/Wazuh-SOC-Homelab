@@ -72,13 +72,14 @@ In Progress:
 
 ---
 
-## Roadmap
+## Future Improvements
 
-- [ ] OpenSearch integration
-- [ ] Root activity detection
-- [ ] Privilege escalation detection
-- [ ] File integrity monitoring
-
+- Log visualization layer (OpenSearch / OpenSearch Dashboards)
+- Root access monitoring (sudo / privileged command abuse detection)
+- Privilege escalation detection (unauthorized permission or role changes)
+- File Integrity Monitoring (critical system file change tracking)
+- MITRE ATT&CK mapping for detection rules and alerts
+  
 ---
 
 ## Detection Scenarios
