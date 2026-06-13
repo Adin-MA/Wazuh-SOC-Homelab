@@ -54,7 +54,7 @@ Attack Simulation (Kali Linux)
 - Automated incident response via Active Response (IP blocking)
 - Centralized security event monitoring and analysis
 - Telegram-based security alert notifications
-- 
+  
 ---
 
 ## Current Status
