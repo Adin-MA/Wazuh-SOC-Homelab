@@ -1,23 +1,15 @@
 # SIEM Lab Setup With Wazuh
 
-A hands-on SIEM lab project that detects SSH brute-force attacks and automatically blocks malicious IPs using Wazuh.
+A hands-on SIEM lab built with Wazuh for log monitoring, threat detection, attack simulation, and automated incident response..
 
 ---
 
 ## Objective
-To build a basic SIEM environment for:
+To build a SIEM lab environment for:
 - Log collection and monitoring
 - Security event detection
-- Simulating attack scenarios (future updates)
-
----
-
-## Tools Used
-- Wazuh (SIEM platform)
-- Wazuh Agent (endpoint monitoring)
-- Wazuh Server / Manager
-- Agent Endpoint
-- Virtual Lab Environment
+- Active response automation
+- Attack simulation and analysis
 
 ---
 
@@ -26,6 +18,17 @@ See [`/Architecture`](./Architecture/README.md) folder for full system diagram.
 
 Flow:
 Endpoint (Ubuntu) → Wazuh Agent → Wazuh Server (Debian) → Alerts & Log Analysis
+
+---
+
+## Lab Components
+
+| Component | OS | Description |
+|------------|------------|------------|
+| SIEM Server | Debian 13 | Wazuh Manager for log collection, analysis, and alerting |
+| Agent Endpoint | Ubuntu Server 26.04 | Log source / target machine for attack simulation |
+| Attack Simulation Host | Kali Linux 1.16 | Security testing and SSH brute-force simulation |
+| Virtualization Platform | VirtualBox 7.2.4 | Virtual environment for lab deployment |
 
 ---
 
@@ -38,66 +41,40 @@ Endpoint (Ubuntu) → Wazuh Agent → Wazuh Server (Debian) → Alerts & Log Ana
 ---
 
 ## Current Status
-🚧 Setup completed (Basic lab environment running).
+Current Version: v1.1 (SSH Detection + Active Response)
 
-Last updated: 13 June 2026
+Implemented:
+- Wazuh deployment
+- Agent registration
+- SSH brute-force detection
+- Active response blocking
+- Alert monitoring
 
----
-
-## Testing Simulator
-Generate test events on Ubuntu:
-```bash
-sudo ls root
-```
-or failed SSH login simulation:
-```bash
-ssh fakeuser@localhost
-```
-Check alerts on debian: 
-```bash
-sudo tail -f /var/ossec/logs/alerts/alerts.log
-```
+In Progress:
+- Root activity monitoring
 
 ---
 
-## Future Improvements
-- [ ] Integrate with OpenSearch for better visualization
-- [x] Add custom detection rules 
-- [x] Implement alert notifications (Telegram / Email)
+## Roadmap
+
+- [ ] OpenSearch integration
+- [ ] Root activity detection
+- [ ] Privilege escalation detection
+- [ ] File integrity monitoring
 
 ---
 
-## Screenshots
+## Detection Scenarios
 
-- Wazuh Manager Status
-<p align="center"> 
- <img src="Assets/Main/Wazuh-Manager.png" width="800"/>
-</p>
+| Scenario | Status |
+|-----------|---------|
+| SSH Brute Force | ✅ |
+| Active Response | ✅ |
+| Root Activity Monitoring | 🚧 |
+| Privilege Escalation | 🚧 |
+| File Integrity Monitoring | ⏳ |
 
-- Wazuh Agent Status
-<p align="center"> 
- <img src="Assets/Main/Wazuh-Agent.png" width="800"/>
-</p>
-
-- Wazuh Agent Connecting Status by Manager
-<p align="center"> 
- <img src="Assets/Main/Agent-Control.png" width="800"/>
-</p>
-
-- Wazuh Real-time Logs
-<p align="center"> 
- <img src="Assets/Main/Wazuh-Alert.png" width="800"/>
-</p>
-
----
-
-## Demo
-
-- SSH brute-force simulation
-- SIEM detection
-- Automated IP blocking
-
-More Screenshoot and walkthrough availabel in [`/Demo`](./Demo/Demo.md)
+Detailed available in [`/Demo`](./Demo/README.md).
 
 ---
 
