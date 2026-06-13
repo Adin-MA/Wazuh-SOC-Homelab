@@ -61,37 +61,7 @@ Telegram notification generated after SSH brute-force detection and Active Respo
 
 ---
 
-## 2. Active Response (Automated IP Blocking)
-
-### 📌 Scenario
-Automated response was triggered after repeated failed login attempts exceeded the threshold.
-
-### ⚡ Response Actions
-- IP address automatically blocked by Wazuh Active Response
-- Firewall rule applied on endpoint machine
-
-### 📸 Evidence
-- Active response execution logs
-- iptables rule verification
-
----
-
-## 3. Log Analysis (Authentication Monitoring)
-
-### 📌 Scenario
-Authentication logs from Ubuntu endpoint were analyzed to identify suspicious login behavior.
-
-### 🔍 Analysis
-- Failed SSH login attempts correlated over time
-- Pattern matched brute force behavior
-
-### 📸 Evidence
-- `/var/log/auth.log`
-- Wazuh event correlation timeline
-
----
-
-## 4. (Future) Root Activity Monitoring
+## 2. (Future) Root Activity Monitoring
 
 ### 🚧 Status
 Planned enhancement for detecting unauthorized root-level activity.
