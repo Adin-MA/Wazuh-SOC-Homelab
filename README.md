@@ -17,7 +17,7 @@ To build a SIEM lab environment for:
 
 This project follows a centralized SIEM architecture using Wazuh for log collection, detection, and automated response.
 
-Full technical diagram and flow: [`/Architecture`](./Architecture/README.md)
+Full technical diagram and flow: [`/Architecture`](./Architecture/ARCHITECTURE.md)
 
 ---
 
@@ -91,7 +91,7 @@ In Progress:
 | Privilege Escalation | 🚧 |
 | File Integrity Monitoring | ⏳ |
 
-Each scenario includes detection logic, alert behavior, and response actions. Full details available in [`/Demo`](./Demo/Demo.md).
+Each scenario includes detection logic, alert behavior, and response actions. Full details available in [`/Demo`](./Demo/DEMO.md).
 
 ---
 
