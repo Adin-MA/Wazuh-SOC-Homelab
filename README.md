@@ -21,6 +21,18 @@ Full technical diagram and flow: [`/Architecture`](./Architecture/ARCHITECTURE.m
 
 ---
 
+## Repository Structure
+| Directory | Purpose |
+|------------|------------|
+| [`/Architecture`](./Architecture/ARCHITECTURE.md) | SIEM Architecture diagrams and technical flow |
+| [`/Assets`](./Assets) | Images and screenshots used in documentation |
+| [`/Config`](./Config) | Wazuh rules and configuration files |
+| [`/Demo`](./Demo/DEMO.md) | Attack simulation and detection demonstrations |
+| [`/Docs`](./Docs/DOCS.md) | Frequently used commands for setup, monitoring, testing, and troubleshooting  |
+| [`/Scripts`](./Scripts/custom-telegram.py) | Telegram integration and automation scripts |
+
+---
+
 ## Security Response Flow
 
 ``` bash
