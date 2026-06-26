@@ -9,11 +9,11 @@ hook_url = sys.argv[3]
 alert_json = json.loads(alert_file.read())
 alert_file.close()
 
-alert_level = alert_json.get('rule', {}).get('level')
-description = alert_json.get('rule', {}).get('description')
-agent_name = alert_json.get('agent', {}).get('name')
-groups = alert_json.get('rule', {}).get('groups')
-rule_id= alert_json.get('rule', {}).get('id')
+alert_level = alert_json.get('rule', {}).get('level', 'Unknown')
+description = alert_json.get('rule', {}).get('description', 'Unknown')
+agent_name = alert_json.get('agent', {}).get('name', 'Unknown')
+groups = alert_json.get('rule', {}).get('groups', [])
+rule_id= alert_json.get('rule', {}).get('id', 'Unknown')
 
 raw_time = alert_json.get('timestamp') or alert_json.get('@timestamp')
 try: 
@@ -40,12 +40,26 @@ elif "root" in groups:
     or 'Unknown'
   )
   
+  command = (
+    alert_json.get('data', {}).get('tty')
+    or alert_json.get('tty')
+    or 'Unknown'
+  )
+
+  pwd = (
+    alert_json.get('data', {}).get('pwd')
+    or alert_json.get('pwd')
+    or 'Unknown'
+  )
+  
   msg = f"Root Activity Alert (Level {alert_level})\n\n"
   msg += f"Command  : {command}\n"
-  chat_id = "YOUR_GROUP_Root_Activity_CHAT_ID_BOT"
+  msg += f"TTY      : {tty}\n"
+  msg += f"PWD      : {pwd}\n"
+  chat_id = "YOUR_GROUP_ROOT_ACTIVITY_CHAT_ID_BOT"
 
 else:
-  chat_id=""
+  sys.exit(0)
 
 msg += f"Agent        : {agent_name}\n"
 msg += f"Rule ID      : {rule_id}\n"
@@ -65,4 +79,4 @@ payload = {
   "parse_mode": "Markdown"
 }
 
-requests.post(hook_url, json=payload)
+requests.post(hook_url, json=payload, timeout=5)
