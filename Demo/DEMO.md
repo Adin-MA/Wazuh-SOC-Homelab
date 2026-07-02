@@ -61,14 +61,69 @@ Telegram notification generated after SSH brute-force detection and Active Respo
 
 ---
 
-## 2. (Future) Root Activity Monitoring
+## 2. Root Activity Monitoring
 
-### 🚧 Status
-Planned enhancement for detecting unauthorized root-level activity.
+### 📌 Scenario
 
-### 🎯 Goal
-- Monitor privilege escalation attempts
-- Detect suspicious sudo usage
-- Alert on unauthorized root access
+A privileged shell execution was simulated on the monitored Ubuntu agent using `sudo` commands.
 
----
+### 🎯 Attack Method
+
+The following commands were executed to simulate root-level activity:
+
+```bash
+sudo su
+sudo sh
+sudo bash
+```
+
+<p align="left">
+ <img src="../Assets/Demo/Root-Activity/Commands/Root-Commands.png" width="600"/>
+</p>
+
+### 🛡️ Detection
+
+A custom Wazuh rule monitors successful `sudo` executions and detects privileged shell commands.
+
+Detected commands include:
+
+- `sudo su`
+- `sudo sh`
+- `sudo bash`
+
+### ⚡ Response
+
+- Custom Wazuh rule triggered
+- High-severity alert generated
+- Alert forwarded to Telegram
+- Command execution details included in the notification
+
+### 📸 Evidence
+
+#### 1. Root activity detected in Wazuh (`alerts.log`)
+
+Detection generated after executing privileged shell commands.
+
+<p align="left">
+ <img src="../Assets/Demo/Root-Activity/Wazuh-Alert/Wazuh-Su-Alert.png" width="900"/>
+</p>
+<p align="center">
+ <img src="../Assets/Demo/Root-Activity/Wazuh-Alert/Wazuh-Sh-Alert.png" width="900"/>
+</p>
+<p align="right">
+ <img src="../Assets/Demo/Root-Activity/Wazuh-Alert/Wazuh-Bash-Alert.png" width="900"/>
+</p>
+
+#### 2. Telegram Alert Notification
+
+Telegram notification containing executed command, agent information, rule ID, and timestamp.
+
+<p align="left">
+ <img src="../Assets/Demo/Root-Activity/Telegram-Alert/Telegram-Su-Alert.png" width="600"/>
+</p>
+<p align="center">
+ <img src="../Assets/Demo/Root-Activity/Telegram-Alert/Telegram-Sh-Alert.png" width="600"/>
+</p>
+<p align="right">
+ <img src="../Assets/Demo/Root-Activity/Telegram-Alert/Telegram-Bash-Alert.png" width="600"/>
+</p>
