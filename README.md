@@ -86,6 +86,7 @@ Current Version: **v2.3** (SSH Detection + Active Response + Root Activity Monit
 ---
 
 ## Implemented:
+
 - Wazuh deployment and configuration
 - Agent registration
 - SSH brute-force detection
@@ -98,18 +99,20 @@ Current Version: **v2.3** (SSH Detection + Active Response + Root Activity Monit
 ---
 
 ## In Progress:
-- Root activity severity tuning based on command criticality
-- Command categorization (administrative vs. high-risk commands)
+
+- Privilege escalation detection using custom Wazuh rules
+- Severity classification based on privileged command execution
 - Context-aware alert classification to reduce false positives
-- Detection coverage expansion for additional privilege escalation and post-exploitation techniques
+- Detection coverage expansion for additional post-exploitation techniques
+  
 ---
 
 ## Future Improvements
 
-- Log visualization layer (OpenSearch / OpenSearch Dashboards)
-- Privilege escalation detection (unauthorized permission or role changes)
-- File Integrity Monitoring (critical system file change tracking)
-- MITRE ATT&CK mapping for detection rules and alerts
+- Log visualization with OpenSearch Dashboards
+- File Integrity Monitoring (FIM)
+- Expanded privilege escalation detection
+- MITRE ATT&CK mapping for custom detection rules
   
 ---
 
