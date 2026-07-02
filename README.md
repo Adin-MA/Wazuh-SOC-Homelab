@@ -5,6 +5,7 @@ A hands-on SIEM lab built with Wazuh for log monitoring, threat detection, attac
 ---
 
 ## Objective
+
 To build a SIEM lab environment for:
 - Log collection and monitoring
 - Security event detection
@@ -22,6 +23,7 @@ Full technical diagram and flow: [`/Architecture`](./Architecture/ARCHITECTURE.m
 ---
 
 ## Repository Structure
+
 | Directory | Purpose |
 |------------|------------|
 | [`/Architecture`](./Architecture/ARCHITECTURE.md) | SIEM Architecture diagrams and technical flow |
@@ -70,6 +72,7 @@ Full technical diagram and flow: [`/Architecture`](./Architecture/ARCHITECTURE.m
 ---
 
 ## Current Status
+
 Current Version: **v2.3** (SSH Detection + Active Response + Root Activity Monitoring + Telegram Improvements) 🚀
 
 ---
