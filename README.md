@@ -70,33 +70,38 @@ Full technical diagram and flow: [`/Architecture`](./Architecture/ARCHITECTURE.m
 ---
 
 ## Current Status
-Current Version: **v2.2** (SSH Detection + Active Response + Root Activity Monitoring + Telegram Improvements) 🚀
+Current Version: **v2.3** (SSH Detection + Active Response + Root Activity Monitoring + Telegram Improvements) 🚀
 
 ---
 
-## What's New in v2.2
-- Added custom root activity detection rules for `sudo bash` and `sudo sh`
-- Improved Telegram integration with structured alert routing using Wazuh rule groups
-- Added additional event context extraction (`command`, `tty`, and alert metadata)
-- Improved alert handling to reduce unrelated notifications
-- Fixed duplicate alert handling issues during root activity testing
-- Continued development of root activity severity classification
+## What's New in v2.3
+- Added custom root activity detection rules for (`sudo su`, `sudo sh`. and `sudo bash`)
+- Improved custom Wazuh rule logic for privileged command monitoring.
+- Enhanced Telegram alert integration with structured notifications for root activity events.
+- Added command context to alerts, including executed command, TTY, agent information, rule ID, and timestamp.
+- Reduced unrelated Telegram notifications by refining rule filtering.
+- Validated custom detection rules using wazuh-logtest and real attack simulations.
+- Improved root activity monitoring reliability through custom rule tuning and event validation.
 
 ---
 
 ## Implemented:
-- Wazuh deployment
+- Wazuh deployment and configuration
 - Agent registration
 - SSH brute-force detection
-- Active response blocking
-- Alert monitoring
+- Active response (automatic IP blocking)
+- Real-time alert monitoring
+- Telegram alert integration
+- Custom root activity detection for privileged shell execution
+- Custom Wazuh rule development and testing
 
 ---
 
 ## In Progress:
-- Root activity monitoring (Detection logic completed, severity tuning in progress)
-- Alert classification based on command context and execution environment
-
+- Root activity severity tuning based on command criticality
+- Command categorization (administrative vs. high-risk commands)
+- Context-aware alert classification to reduce false positives
+- Detection coverage expansion for additional privilege escalation and post-exploitation techniques
 ---
 
 ## Future Improvements
@@ -114,7 +119,7 @@ Current Version: **v2.2** (SSH Detection + Active Response + Root Activity Monit
 |-----------|---------|
 | SSH Brute Force | ✅ |
 | Active Response | ✅ |
-| Root Activity Monitoring | 🚧 |
+| Root Activity Monitoring | ✅ |
 | Privilege Escalation | 🚧 |
 | File Integrity Monitoring | ⏳ |
 
