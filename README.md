@@ -1,11 +1,9 @@
 # SIEM Lab Setup With Wazuh
-
 A hands-on SIEM lab built with Wazuh for log monitoring, threat detection, attack simulation, and automated incident response.
 
 ---
 
 ## Objective
-
 To build a SIEM lab environment for:
 - Log collection and monitoring
 - Security event detection
@@ -15,7 +13,6 @@ To build a SIEM lab environment for:
 ---
 
 ## Architecture
-
 This project follows a centralized SIEM architecture using Wazuh for log collection, detection, and automated response.
 
 Full technical diagram and flow: [`/Architecture`](./Architecture/ARCHITECTURE.md)
@@ -23,7 +20,6 @@ Full technical diagram and flow: [`/Architecture`](./Architecture/ARCHITECTURE.m
 ---
 
 ## Repository Structure
-
 | Directory | Purpose |
 |------------|------------|
 | [`/Architecture`](./Architecture/ARCHITECTURE.md) | SIEM Architecture diagrams and technical flow |
@@ -36,7 +32,6 @@ Full technical diagram and flow: [`/Architecture`](./Architecture/ARCHITECTURE.m
 ---
 
 ## Security Response Flow
-
 ``` bash
 🚨 Attack Simulation (Kali Linux)
 → Endpoint (Ubuntu Server)
@@ -51,7 +46,6 @@ Full technical diagram and flow: [`/Architecture`](./Architecture/ARCHITECTURE.m
 ---
 
 ## Lab Components
-
 | Component | OS | Description |
 |------------|------------|------------|
 | SIEM Server | Debian 13 | Wazuh Manager for log collection, analysis, and alerting |
@@ -62,7 +56,6 @@ Full technical diagram and flow: [`/Architecture`](./Architecture/ARCHITECTURE.m
 ---
 
 ## Key Capabilities
-
 - 📡 Real-time log ingestion from endpoint machines
 - 🧠 Threshold-based SSH brute-force detection (event correlation over time window to reduce false positives)
 - ⚡ Automated incident response via Active Response (IP blocking)
@@ -72,7 +65,6 @@ Full technical diagram and flow: [`/Architecture`](./Architecture/ARCHITECTURE.m
 ---
 
 ## Current Status
-
 Current Version: **v2.3** (SSH Detection + Active Response + Root Activity Monitoring + Telegram Improvements) 🚀
 
 ---
@@ -89,7 +81,6 @@ Current Version: **v2.3** (SSH Detection + Active Response + Root Activity Monit
 ---
 
 ## Implemented:
-
 - Wazuh deployment and configuration
 - Agent registration
 - SSH brute-force detection
@@ -102,7 +93,6 @@ Current Version: **v2.3** (SSH Detection + Active Response + Root Activity Monit
 ---
 
 ## In Progress:
-
 - Privilege escalation detection using custom Wazuh rules
 - Severity classification based on privileged command execution
 - Context-aware alert classification to reduce false positives
@@ -111,7 +101,6 @@ Current Version: **v2.3** (SSH Detection + Active Response + Root Activity Monit
 ---
 
 ## Future Improvements
-
 - Log visualization with OpenSearch Dashboards
 - File Integrity Monitoring (FIM)
 - Expanded privilege escalation detection
@@ -120,7 +109,6 @@ Current Version: **v2.3** (SSH Detection + Active Response + Root Activity Monit
 ---
 
 ## Detection Scenarios
-
 | Scenario | Status |
 |-----------|---------|
 | SSH Brute Force | ✅ |
