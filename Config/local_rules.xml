@@ -25,8 +25,22 @@
   <rule id="100200" level="12">
     <if_sid>5402</if_sid>
     <location>journald</location>
-    <match>COMMAND=/usr/bin/(sh|bash)</match>
-    <description>Suspicious Root Activity Detected</description>
+    <match>COMMAND=/usr/bin/su</match>
+    <description>Suspicious ROOT Activity Detected</description>
+  </rule>
+  
+  <rule id="100201" level="12">
+    <if_sid>5402</if_sid>
+    <location>journald</location>
+    <match>COMMAND=/usr/bin/sh</match>
+    <description>Suspicious ROOT Activity Detected</description>
+  </rule>
+
+  <rule id="100202" level="12">
+    <if_sid>5402</if_sid>
+    <location>journald</location>
+    <match>COMMAND=/usr/bin/bash</match>
+    <description>Suspicious ROOT Activity Detected</description>
   </rule>
 
 </group>
