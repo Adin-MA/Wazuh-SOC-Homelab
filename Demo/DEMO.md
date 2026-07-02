@@ -112,6 +112,8 @@ Telegram notification generated after privileged shell execution was detected by
  <img src="../Assets/Demo/Root-Activity/Telegram-Alert/Telegram-Bash-Alert.png" width="300"/>
 </p>
 
+---
+
 ## 3. (Future) Privilege Escalation Detection
 
 ### 🚧 Status
