@@ -105,13 +105,13 @@ Detected commands include:
 Detection generated after executing privileged shell commands.
 
 <p align="left">
- <img src="../Assets/Demo/Root-Activity/Wazuh-Alert/Wazuh-Su-Alert.png" width="900"/>
+ <img src="../Assets/Demo/Root-Activity/Wazuh-Alert/Wazuh-Su-Alert.png" width="600"/>
 </p>
-<p align="center">
- <img src="../Assets/Demo/Root-Activity/Wazuh-Alert/Wazuh-Sh-Alert.png" width="900"/>
+<p align="left">
+ <img src="../Assets/Demo/Root-Activity/Wazuh-Alert/Wazuh-Sh-Alert.png" width="600"/>
 </p>
-<p align="right">
- <img src="../Assets/Demo/Root-Activity/Wazuh-Alert/Wazuh-Bash-Alert.png" width="900"/>
+<p align="left">
+ <img src="../Assets/Demo/Root-Activity/Wazuh-Alert/Wazuh-Bash-Alert.png" width="600"/>
 </p>
 
 #### 2. Telegram Alert Notification
@@ -119,11 +119,20 @@ Detection generated after executing privileged shell commands.
 Telegram notification containing executed command, agent information, rule ID, and timestamp.
 
 <p align="left">
- <img src="../Assets/Demo/Root-Activity/Telegram-Alert/Telegram-Su-Alert.png" width="600"/>
+ <img src="../Assets/Demo/Root-Activity/Telegram-Alert/Telegram-Su-Alert.png" width="300"/>
+ <img src="../Assets/Demo/Root-Activity/Telegram-Alert/Telegram-Sh-Alert.png" width="300"/>
+ <img src="../Assets/Demo/Root-Activity/Telegram-Alert/Telegram-Bash-Alert.png" width="300"/>
 </p>
-<p align="center">
- <img src="../Assets/Demo/Root-Activity/Telegram-Alert/Telegram-Sh-Alert.png" width="600"/>
-</p>
-<p align="right">
- <img src="../Assets/Demo/Root-Activity/Telegram-Alert/Telegram-Bash-Alert.png" width="600"/>
-</p>
+
+## 3. (Future) Privilege Escalation Detection
+
+### 🚧 Status
+Planned enhancement for detecting privilege escalation techniques and high-risk administrative actions.
+
+### 🎯 Goal
+- Detect unauthorized privilege escalation attempts
+- Monitor execution of high-risk administrative commands
+- Classify alerts based on command severity
+- Generate real-time Telegram notifications for critical events
+
+---
