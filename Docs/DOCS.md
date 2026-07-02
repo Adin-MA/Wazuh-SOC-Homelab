@@ -81,7 +81,13 @@ sudo nano /var/ossec/etc/rules/local_rules.xml
 
 ```bash
 sudo nano /var/ossec/integrations/custom-telegrams
-```  
+```
+
+- Wazuh Log Test
+
+```bash
+sudo /var/ossec/bin/wazuh-logtest
+```
 
 ---
 
