@@ -83,7 +83,17 @@ sudo nano /var/ossec/etc/rules/local_rules.xml
 sudo nano /var/ossec/integrations/custom-telegrams
 ```
 
-- Wazuh Log Test
+---
+
+## Wazuh Validation & Testing
+
+- Validate Wazuh configuration and rule syntax
+
+```bash
+sudo /var/ossec/bin/wazuh-analysisd -t
+```
+
+- Test log decoding and rule matching
 
 ```bash
 sudo /var/ossec/bin/wazuh-logtest
