@@ -48,5 +48,3 @@ Telegram notification generated after SSH brute-force detection and Active Respo
 <p align="left"> 
  <img src="../Assets/Demo/SSH-Evidence/Telegram-Notif-SSH.png" width="600"/>
 </p>
-
----
