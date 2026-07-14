@@ -4,11 +4,13 @@ A hands-on SIEM lab built with Wazuh for log monitoring, threat detection, attac
 ---
 
 ## Objective
-To build a SIEM lab environment for:
-- Log collection and monitoring
-- Security event detection
+To build a hands-on SIEM lab environment for:
+- Log collection and centralized monitoring
+- Custom security event detection
 - Active response automation
 - Attack simulation and analysis
+- Linux auditing with Auditd
+- Risk-based event correlation
 
 ---
 
@@ -25,7 +27,7 @@ Full technical diagram and flow: [`/Architecture`](./Architecture/ARCHITECTURE.m
 | [`/Architecture`](./Architecture/ARCHITECTURE.md) | SIEM Architecture diagrams and technical flow |
 | [`/Assets`](./Assets) | Images and screenshots used in documentation |
 | [`/Config`](./Config) | Wazuh rules and configuration files |
-| [`/Demo`](./Demo/DEMO.md) | Attack simulation and detection demonstrations |
+| [`/Demo`](./Demo) | Attack simulation and detection demonstrations |
 | [`/Docs`](./Docs/DOCS.md) | Frequently used commands for setup, monitoring, testing, and troubleshooting  |
 | [`/Scripts`](./Scripts/custom-telegram.py) | Telegram integration and automation scripts |
 
@@ -64,19 +66,28 @@ Full technical diagram and flow: [`/Architecture`](./Architecture/ARCHITECTURE.m
   
 ---
 
-## Current Status
-Current Version: **v2.3** (SSH Detection + Active Response + Root Activity Monitoring + Telegram Improvements) 🚀
+## Project Overview
+| Item | Count |
+|------|-------|
+| Custom Rules Wazuh | 6 |
+| Log Sources | 2 |
+| Detection Scenarios | 2 |
+| Active Response Workflow | 1 |
+| Notification Integration | 1 (Telegram) |
 
 ---
 
-## What's New in v2.3
-- Added custom root activity detection rules for (`sudo su`, `sudo sh`. and `sudo bash`)
-- Improved custom Wazuh rule logic for privileged command monitoring.
-- Enhanced Telegram alert integration with structured notifications for root activity events.
-- Added command context to alerts, including executed command, TTY, agent information, rule ID, and timestamp.
-- Reduced unrelated Telegram notifications by refining rule filtering.
-- Validated custom detection rules using wazuh-logtest and real attack simulations.
-- Improved root activity monitoring reliability through custom rule tuning and event validation.
+## Current Status
+Current Version: **v2.4** (Repository Restructure & Documentation Improvements) 🚀
+
+---
+
+## What's New in v2.4
+- Reorganized the repository structure for improved readability and maintainability.
+- Split demonstration documentation into separate files for each detection scenario.
+- Restructured the Config directory by separating Manager, Agent, and Auditd configurations.
+- Added an Auditd configuration directory for upcoming Linux auditing integration.
+- Improved repository navigation and documentation consistency.
 
 ---
 
@@ -92,34 +103,33 @@ Current Version: **v2.3** (SSH Detection + Active Response + Root Activity Monit
 
 ---
 
-## In Progress:
-- Privilege escalation detection using custom Wazuh rules
-- Severity classification based on privileged command execution
-- Context-aware alert classification to reduce false positives
-- Detection coverage expansion for additional post-exploitation techniques
+## In Progress
+- Risk-based privilege escalation detection
+- SQLite-based risk scoring engine
+- Auditd integration for Linux auditing
+- Context-aware event correlation
+- Risk-based automated response
   
 ---
 
 ## Future Improvements
 - Log visualization with OpenSearch Dashboards
 - File Integrity Monitoring (FIM)
-- Expanded privilege escalation detection
+- Detection coverage expansion for additional attack techniques
 - MITRE ATT&CK mapping for custom detection rules
+- Enhanced threat hunting capabilities
   
 ---
 
 ## Detection Scenarios
-| Scenario | Status |
-|-----------|---------|
-| SSH Brute Force | ✅ |
-| Active Response | ✅ |
-| Root Activity Monitoring | ✅ |
-| Privilege Escalation | 🚧 |
-| File Integrity Monitoring | ⏳ |
-
-Each scenario includes detection logic, alert behavior, and response actions. Full details available in [`/Demo`](./Demo/DEMO.md).
+| Scenario | Status | Demo |
+|-----------|---------|---------|
+| SSH Brute Force | ✅ | [`/SSH_DEMO.md`](/Demo/SSH_DEMO.md) |
+| Root Activity Monitoring | ✅ | [`/ROOT_ACTIVITY_MONITORING.md`](/Demo/ROOT_ACTIVITY_MONITORING.md) |
+| Privilege Escalation | 🚧 | Coming Soon |
+| File Integrity Monitoring | ⏳ | Coming Soon |
 
 ---
 
 ## Notes
-This is a personal cybersecurity learning project for SOC/SIEM practice.
+This is a personal cybersecurity learning project focused on SIEM engineering, detection engineering, and SOC analyst practices using Wazuh.
