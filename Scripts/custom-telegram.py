@@ -40,7 +40,7 @@ elif "root" in groups:
     or 'Unknown'
   )
   
-  command = (
+  tty = (
     alert_json.get('data', {}).get('tty')
     or alert_json.get('tty')
     or 'Unknown'
