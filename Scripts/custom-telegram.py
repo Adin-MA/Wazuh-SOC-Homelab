@@ -35,72 +35,68 @@ if "bruteforce" in groups:
     chat_id = "YOUR_GROUP_SSH_CHAT_ID_BOT"
 
 elif "monitoring" in groups:
-    msg = f"Root Activity Wazuh Alert (Level {alert_level})\n\n"
-
-    if "root" in groups:
-        command = (
-            alert_json.get('data', {}).get('command')
-            or alert_json.get('command')
-            or 'Unknown'
-        )
-
-        tty = (
-            alert_json.get('data', {}).get('tty')
-            or alert_json.get('tty')
-            or 'Unknown'
-        )
-
-        pwd = (
-            alert_json.get('data', {}).get('pwd')
-            or alert_json.get('pwd')
-            or 'Unknown'
-       )
-
-        msg += f"*Command :* {command}\n"
-        msg += f"*TTY            :* {tty}\n"
-        msg += f"*PWD           :* {pwd}\n"
-
-    elif "audit" in groups:
-        command = (
-            alert_json.get('data', {}).get('audit', {}).get('command')
-            or alert_json.get('data', {}).get('command')
-            or alert_json.get('command')
-            or 'Unknown'
-        )
-
-        if rule_id in ["100301", "100302", "100303", "100304"] and command in ["useradd", "userdel", "adduser"]:
-            sys.exit(0)
-
-        auid = (
-            alert_json.get('data', {}).get('audit', {}).get('auid')
-            or alert_json.get('data', {}).get('auid')
-            or alert_json.get('auid')
-            or 'Unknown'
-        )
-
-        tty = (
-           alert_json.get('data', {}).get('audit', {}).get('tty')
-           or alert_json.get('data', {}).get('tty')
-           or alert_json.get('tty')
-           or 'Unknown'
-        )
-        
-        msg += f"*AUID          :* {auid}\n"
-        msg += f"*Command :* {command}\n"
-        msg += f"*TTY            :* {tty}\n"
-
-    else:
+    command = (
+        alert_json.get('data', {}).get('audit', {}).get('command')
+        or alert_json.get('data', {}).get('command')
+        or alert_json.get('command')
+        or 'Unknown'
+    )
+    if rule_id in ["100301", "100302", "100303", "100304"] and command in ["useradd", "userdel", "adduser"]:
         sys.exit(0)
+    
+    auid = (
+        alert_json.get('data', {}).get('audit', {}).get('auid')
+        or alert_json.get('data', {}).get('auid')
+        or alert_json.get('auid')
+        or 'Unknown'
+    )
+
+    tty = (
+        alert_json.get('data', {}).get('audit', {}).get('tty')
+        or alert_json.get('data', {}).get('tty')
+        or alert_json.get('tty')
+        or 'Unknown'
+    )
+        
+    msg = f"Root Activity Wazuh Alert (Level {alert_level})\n\n"
+    msg += f"*AUID          :* {auid}\n"
+    msg += f"*Command :* {command}\n"
+    msg += f"*TTY            :* {tty}\n"
 
     chat_id = "YOUR_GROUP_ROOT_ACTIVITY_CHAT_ID_BOT"
+
+elif "escalation" in groups:
+    command = (
+        alert_json.get('data', {}).get('command')
+        or alert_json.get('command')
+        or 'Unknown'
+    )
+
+    tty = (
+        alert_json.get('data', {}).get('tty')
+        or alert_json.get('tty')
+        or 'Unknown'
+    )
+
+    pwd = (
+        alert_json.get('data', {}).get('pwd')
+        or alert_json.get('pwd')
+        or 'Unknown'
+    )
+    msg = f"Privilege Escalation Wazuh Alert (Level {alert_level})\n\n"
+    msg += f"*Command :* {command}\n"
+    msg += f"*TTY            :* {tty}\n"
+    msg += f"*PWD           :* {pwd}\n"
+
+    chat_id = "YOUR_GROUP_PRIVILEGE_ESCALATION_CHAT_ID_BOT"
 
 else:
     sys.exit(0)
 
-msg += f"*Agent         :* {agent_name}\n"
-msg += f"*Rule ID       :* {rule_id}\n"
-msg += f"*Time           :* {time_str}\n\n"
-msg += f"*Description:*\n{description}\n"
+msg += f"*Agent         : {agent_name}\n"
+msg += f"*Rule ID       : {rule_id}\n"
+msg += f"*Time           : {time_str}\n\n"
+msg += f"*Description:* \n{description}\n"
 
 if "L1" in description:
     msg += "\n*STATUS:*\nIP BLOCKED 1 MINUTES BY IPTABLES"
