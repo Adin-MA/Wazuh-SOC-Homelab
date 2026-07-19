@@ -20,71 +20,46 @@
   
 </group>
 
-<group name="monitoring,root">
-  
-  <rule id="100200" level="12">
-    <if_sid>5402</if_sid>
-    <location>journald</location>
-    <match>COMMAND=/usr/bin/su</match>
-    <description>Suspicious ROOT Activity Detected</description>
-  </rule>
-  
-  <rule id="100201" level="12">
-    <if_sid>5402</if_sid>
-    <location>journald</location>
-    <match>COMMAND=/usr/bin/sh</match>
-    <description>Suspicious ROOT Activity Detected</description>
-  </rule>
+<group name="monitoring,audit,root">
 
-  <rule id="100202" level="12">
-    <if_sid>5402</if_sid>
-    <location>journald</location>
-    <match>COMMAND=/usr/bin/bash</match>
-    <description>Suspicious ROOT Activity Detected</description>
-  </rule>
-
-</group>
-
-<group name="monitoring,audit">
-
-  <rule id="100300" level="11">
+  <rule id="100200" level="11">
     <if_sid>80700</if_sid>
     <field name="audit.key">chck_passwd</field>
     <field name="audit.syscall">257</field>
     <description>Someone Has Modified /etc/passwd</description>
   </rule>
 
-  <rule id="100301" level="11">
+  <rule id="100201" level="11">
     <if_sid>80700</if_sid>
     <field name="audit.key">chck_shadow</field>
     <description>Someone Has Modified /etc/shadow</description>
   </rule>
 
-  <rule id="100302" level="11">
+  <rule id="100202" level="11">
     <if_sid>80700</if_sid>
     <field name="audit.key">chck_group</field>
     <description>Someone Has Modified /etc/group</description>
   </rule>
 
-  <rule id="100303" level="11">
+  <rule id="100203" level="11">
     <if_sid>80700</if_sid>
     <field name="audit.key">chck_sudoers</field>
     <description>Someone Has Modified /etc/sudoers</description>
   </rule>
 
-  <rule id="100304" level="11">
+  <rule id="100204" level="11">
     <if_sid>80700</if_sid>
     <field name="audit.key">chck_chmod</field>
     <description>Someone Has Modified Permission</description>
   </rule>
 
-  <rule id="100390" level="0">
+  <rule id="100290" level="0">
     <if_sid>80730</if_sid>
     <match>operation="profile_replace"</match>
     <description>Mute AppArmor profile updates from Ubuntu Pro background jobs</description>
   </rule>
 
-  <rule id="100391" level="0">
+  <rule id="100291" level="0">
     <if_sid>80730</if_sid>
     <field name="audit.command">who</field>
     <match>denied_mask="r"</match>
@@ -93,3 +68,27 @@
 
 </group>
 
+<group name="escalation,privilege">
+  
+  <rule id="100300" level="12">
+    <if_sid>5402</if_sid>
+    <location>journald</location>
+    <match>COMMAND=/usr/bin/su</match>
+    <description>Suspicious ROOT Activity Detected</description>
+  </rule>
+  
+  <rule id="100301" level="12">
+    <if_sid>5402</if_sid>
+    <location>journald</location>
+    <match>COMMAND=/usr/bin/sh</match>
+    <description>Suspicious ROOT Activity Detected</description>
+  </rule>
+
+  <rule id="100302" level="12">
+    <if_sid>5402</if_sid>
+    <location>journald</location>
+    <match>COMMAND=/usr/bin/bash</match>
+    <description>Suspicious ROOT Activity Detected</description>
+  </rule>
+
+</group>
