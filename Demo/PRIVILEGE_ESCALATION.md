@@ -13,7 +13,7 @@ sudo bash | sudo -i
 ```
 
 <p align="left">
- <img src="../Assets/Demo/Privilege-Escalation/Commands/Root-Commands.png" width="600"/>
+ <img src="../Assets/Demo/Privilege-Escalation/Commands/Privilege-Escalation-Commands.png" width="600"/>
 </p>
 
 ## 🛡️ Detection
