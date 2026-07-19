@@ -84,8 +84,7 @@ elif "monitoring" in groups:
            or alert_json.get('tty')
            or 'Unknown'
         )
-        syscall = alert_json.get('data', {}).get('audit', {}).get('syscall')
-        msg += f"*SYSCALL: {syscall}*"
+        
         msg += f"*AUID          :* {auid}\n"
         msg += f"*Command :* {command}\n"
         msg += f"*TTY            :* {tty}\n"
