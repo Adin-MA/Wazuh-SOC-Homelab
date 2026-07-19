@@ -41,7 +41,7 @@ elif "monitoring" in groups:
         or alert_json.get('command')
         or 'Unknown'
     )
-    if rule_id in ["100301", "100302", "100303", "100304"] and command in ["useradd", "userdel", "adduser"]:
+    if rule_id in ["100201", "100202", "100203", "100204"] and command in ["useradd", "userdel", "adduser"]:
         sys.exit(0)
     
     auid = (
