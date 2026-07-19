@@ -68,7 +68,7 @@
 
 </group>
 
-<group name="escalation,privilege">
+<group name="privilege,escalation">
   
   <rule id="100300" level="12">
     <if_sid>5402</if_sid>
