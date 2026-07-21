@@ -13,7 +13,7 @@ This simulation executes high-risk commands to replicate malicious post-compromi
 ## 🛡️ Detection
 A custom Wazuh rule monitors successful `sudo` executions and detects privileged root commands.
 Detected commands include:
-- `sudo adduser`
+- `sudo useradd`
 - `sudo passwd`
 - `sudo groupadd`
 - `sudo visudo`
