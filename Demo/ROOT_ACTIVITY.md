@@ -54,7 +54,7 @@ Alert logs generated immediately after executing privileged root commands.
 
 ### Ownership Change
 <p align="left">
- <img src="../Assets/Demo/Root-Escalation/Wazuh-Alert/Ownership-Change.png" width="1000"/>
+ <img src="../Assets/Demo/Root-Activity/Wazuh-Alert/Ownership-Change.png" width="1000"/>
 </p>
 
 ### Permission Change
