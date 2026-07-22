@@ -15,7 +15,7 @@ SSH brute-force attacks are one of the most common techniques used to gain unaut
 - Automated login attempts from attacker machine (Kali Linux)
 
 <p align="left"> 
- <img src="../Assets/Demo/SSH-Evidence/Attack-Methode/Multipled-Attemp-SSH.png" width="600"/>
+ <img src="../Assets/Demo/SSH-Evidence/Attack-Method/SSH-Bruteforce-Attempts.png" width="600"/>
 </p>
 
 ---
@@ -25,8 +25,8 @@ Wazuh detected multiple authentication failures based on predefined rules for SS
 | Item | Value |
 |------|-------|
 | Log Source | `/var/log/auth.log` |
-| Detection Rule | Built-in SSH authentication rules |
-| Rule ID | 100100–100102 |
+| Detection Rule | Built-in SSH Authentication Rules |
+| Rule IDs | 100100–100102 |
 | Detection Type | Threshold-based |
 | Alert Level | 13–15 |
 | Active Response | Enabled |
@@ -34,7 +34,7 @@ Wazuh detected multiple authentication failures based on predefined rules for SS
 ---
 
 ## Response
-After the configured threshold was exceeded:
+After the configured detection threshold was exceeded:
 
 - A Wazuh security alert was generated.
 - Active Response automatically blocked the attacker's IP address.
@@ -44,7 +44,7 @@ After the configured threshold was exceeded:
 ---
 
 ## Evidence
-### 1. SSH Brute Force detected in Wazuh (`alerts.log`)
+### 1. Wazuh Alert (`alerts.log`)
 Security alert generated after multiple failed SSH authentication attempts.
 
 <p align="left"> 
@@ -55,7 +55,7 @@ Security alert generated after multiple failed SSH authentication attempts.
 Failed authentication attempts observed on the Ubuntu endpoint.
 
 <p align="left"> 
- <img src="../Assets/Demo/SSH-Evidence/Authetification/Authetification-Failure-Event.png" width="900"/>
+ <img src="../Assets/Demo/SSH-Evidence/Authentication/Authentication-Failure-Event.png" width="900"/>
 </p>
 
 ### 3. Blocked IP from Active Response logs
