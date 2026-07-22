@@ -16,7 +16,8 @@ The following commands were executed to simulate root-level activity:
 ```bash
 sudo su
 sudo sh
-sudo bash | sudo -i
+sudo bash
+sudo -i
 ```
 
 <p align="left">
@@ -31,8 +32,8 @@ A custom Wazuh rule monitors successful `sudo` executions and detects privileged
 | Item | Value |
 |------------------|-------|
 | Log Source | Journald |
-| Detection Rule | Custom Privilege Escalation Rule |
-| Rule ID | 100300–100302 |
+| Detection Rule | Custom Privilege Escalation Rules |
+| Rule IDs | 100300–100302 |
 | Detection Type | Privileged Shell Execution | 
 | Monitored Commands | `su`, `sh`, `bash`, `sudo -i` |
 | Alert Level | 12 |
@@ -43,14 +44,14 @@ A custom Wazuh rule monitors successful `sudo` executions and detects privileged
 After a privileged shell execution was detected:
 
 - A high-severity Wazuh alert was generated.
-- Command execution details were extracted from the event.
+- Command execution details were extracted from the Journald event..
 - A real-time Telegram notification was sent to the administrator.
 
 ---
 
 ## Evidence
-### 1. Privilege Escalation detected in Wazuh (`alerts.log`)
-Security alert generated after privileged shell execution.
+### 1. Wazuh Alert (`alerts.log`)
+Security alerts generated after privileged shell execution.
 
 <p align="left">
  <img src="../Assets/Demo/Privilege-Escalation/Wazuh-Alert/Wazuh-Su-Alert.png" width="1000"/>
