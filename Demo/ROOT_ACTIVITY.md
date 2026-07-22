@@ -1,36 +1,58 @@
 # Root Activity Monitoring
 
-## 📌 Scenario
-This scenario simulates privilege abuse and unauthorized administrative actions on a monitored Ubuntu endpoint. In a production infrastructure, users with high-level access (or attackers who have successfully escalated privileges) often manipulate system files, create persistent backdoor accounts, or modify critical file permissions to evade detection.
+## Scenario
+This scenario simulates common post-compromise administrative activities performed with elevated privileges, such as user management and critical system configuration changes.
 
-## 🎯 Attack Method
-This simulation executes high-risk commands to replicate malicious post-compromise activities. It focuses on how an attacker spawns root shells, creates persistent accounts, and manipulates critical system files, allowing us to validate the detection capabilities and filtering efficiency of our monitoring system.
+---
+
+## Why It Matters
+Unauthorized administrative actions may indicate privilege abuse or post-compromise activity. Monitoring critical administrative commands helps detect persistence attempts, unauthorized account creation, and system configuration changes.
+
+---
+
+## Attack Method
+The following privileged administrative commands were executed to simulate post-compromise activities:
+
+```bash
+sudo useradd
+sudo passwd
+sudo groupadd
+sudo visudo
+sudo chown
+sudo chmod
+```
 
 <p align="left"> 
  <img src="../Assets/Demo/Root-Activity/Commands/Root-Commands.png" width="600"/>
 </p>
 
-## 🛡️ Detection
-A custom Wazuh rule monitors successful `sudo` executions and detects privileged root commands.
-Detected commands include:
-- `sudo useradd`
-- `sudo passwd`
-- `sudo groupadd`
-- `sudo visudo`
-- `sudo chwon`
-- `sudo chmod`
+---
 
-## ⚡ Response
-- Auditd Log
-- Custom Wazuh rule triggered
-- High-severity alert generated
-- Alert forwarded to Telegram
-- Command execution details included in the notification
+## Detection
+Custom Wazuh rules monitor successful `sudo` executions and identify high-risk administrative commands associated with user management, privilege modification, and system configuration changes.
 
-## 📸 Evidence
+| Item | Value |
+|------|-------|
+| Log Source | Auditd |
+| Detection Rule | Custom Root Activity Rules |
+| Rule IDs | 100200–100204 |
+| Detection Type | Root Activity Monitoring |
+| Alert Level | 11 |
 
-### 1. Root Activity detected in Wazuh (`alerts.log`)
-Alert logs generated immediately after executing privileged root commands.
+---
+
+## Response
+After a monitored administrative command was executed:
+
+- A high-severity Wazuh alert was generated.
+- Command execution details were collected from Auditd logs.
+- A real-time Telegram notification was sent to the administrator.
+
+---
+
+## Evidence
+### 1. Wazuh Alert (`alerts.log`)
+Security alerts generated after executing monitored administrative commands.
 
 ### User Management
 <p align="left">
@@ -63,7 +85,7 @@ Alert logs generated immediately after executing privileged root commands.
 </p>
 
 ### 2. Telegram Alert Notification
-Telegram notification generated after privileged root command was detected by the custom Wazuh rule.
+Telegram notifications generated after monitored administrative commands were detected by the custom Wazuh rules.
 
 <p align="left">
  <img src="../Assets/Demo/Root-Activity/Telegram-Alert/Telegram-User-Management-Alert.png" width="300"/>
