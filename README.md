@@ -107,11 +107,6 @@ Current Version: **v3.0** (Privilege Escalation Detection & Auditd Integration)
 - 13 Custom Wazuh Rules
 - Repository Structure and Documentation Improvements
 
-**Development Status**
-- Auditd Event Filtering & Normalization — In Progress
-- Additional Detection Scenarios — Planned
-- Threat Scoring & Event Correlation — Planned
-
 ---
 
 ## What's New in v3.0
