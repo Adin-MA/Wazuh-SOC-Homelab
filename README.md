@@ -141,15 +141,19 @@ Current Version: **v3.0** (Privilege Escalation Detection & Auditd Integration)
 ---
 
 ## Project Roadmap
+
 | Version | Focus | Status |
 |---------|-------|:------:|
 | v1.x | Wazuh deployment, basic monitoring, SSH brute-force detection, and Active Response | ✅ |
 | v2.x | Telegram notification integration and Root Activity monitoring | ✅ |
 | v3.0 | Privilege Escalation detection and Auditd integration | ✅ |
-| v3.1 | Auditd event filtering, normalization, and detection scenario completion | 🚧 |
-| v3.2 | MITRE ATT&CK mapping and context-aware event correlation | ⏳ |
-| v3.3 | SQLite-based Threat Scoring Engine and Risk-Based Response | ⏳ |
-| v4.0 | End-to-end integration, validation, and final documentation | ⏳ |
+| v4.0 | Auditd event filtering and normalization | 🚧 |
+| v5.0 | Account Management and File Integrity Monitoring (FIM) | ⏳ |
+| v5.1 | Persistence, Firewall, and Audit Configuration Detection | ⏳ |
+| v5.2 | MITRE ATT&CK mapping for custom detection rules | ⏳ |
+| v6.0 | Context-aware Event Correlation and Threat Scoring Engine | ⏳ |
+| v6.1 | Risk-Based Alerting and Automated Response | ⏳ |
+| v7.0 | End-to-end integration, validation, and final documentation | ⏳ |
 
 ---
 
