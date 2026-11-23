@@ -45,14 +45,17 @@ Attack Simulation
 ---
 
 ## Detection Scenarios
+
 | Scenario | Status | Demo |
 |-----------|---------|---------|
 | SSH Brute Force | ✅ | [`SSH Brute Force Demo`](/Demo/SSH_DEMO.md) |
 | Root Activity | ✅ | [`Root Activity Demo`](/Demo/ROOT_ACTIVITY.md) |
 | Privilege Escalation | ✅ | [`Privilege Escalation Demo`](/Demo/PRIVILEGE_ESCALATION.md) |
-| File Integrity Monitoring | 🚧 | Coming Soon |
-
----
+| Account Management | 🚧 | Coming Soon |
+| File Integrity Monitoring | ⏳ | Coming Soon |
+| Persistence Detection | ⏳ | Coming Soon |
+| Firewall Configuration Changes | ⏳ | Coming Soon |
+| Audit Configuration Changes | ⏳ | Coming Soon |
 
 ## Detection Features
 | Feature | Status | Description |
@@ -62,9 +65,11 @@ Attack Simulation
 | Active Response | ✅ | Automatic IP blocking using Wazuh |
 | Telegram Notifications | ✅ | Real-time alert delivery |
 | Auditd Integration | ✅ | Linux auditing for privileged activity |
-| Event Correlation | ⏳ | Correlate multiple security events into a single incident |
-| Threat Scoring Engine | ⏳ | Assign risk scores to detected activities |
-| Risk-Based Response | ⏳ | Automated response based on accumulated threat score |
+| Auditd Event Filtering | 🚧 | Filter and normalize relevant Auditd events |
+| MITRE ATT&CK Mapping | ⏳ | Map custom detection rules to relevant MITRE ATT&CK techniques |
+| Event Correlation | ⏳ | Correlate multiple security events into a single activity or incident |
+| Threat Scoring Engine | ⏳ | Assign risk scores based on correlated security activities |
+| Risk-Based Response | ⏳ | Trigger automated responses based on accumulated risk scores |
 
 ---
 
@@ -76,7 +81,8 @@ Attack Simulation
 | Detection Scenarios | 3 | SSH brute-force, root activity, and privilege escalation detection |
 | Active Response | IP Blocking | Automatic IP blocking using Wazuh Active Response |
 | Automation | Python | Custom integration and automation scripts |
-| Threat Scoring Database | SQLite (Planned) | Threat scoring and event tracking |
+| Event Correlation | Planned | Context-aware correlation of normalized security events |
+| Threat Scoring Database | SQLite (Planned) | Store and track session-based risk scores |
 
 
 ---
@@ -97,33 +103,39 @@ Current Version: **v3.0** (Privilege Escalation Detection & Auditd Integration)
 
 **Highlights**
 - Privilege Escalation Detection
-- Auditd Integration
+- Initial Auditd Integration
 - 13 Custom Wazuh Rules
+- Repository Structure and Documentation Improvements
+
+**Development Status**
+- Auditd Event Filtering & Normalization — In Progress
+- Additional Detection Scenarios — Planned
+- Threat Scoring & Event Correlation — Planned
 
 ---
 
 ## What's New in v3.0
 - Added privilege escalation detection using custom Wazuh rules.
 - Integrated Auditd as an additional Linux audit log source.
-- Expanded detection scenarios to include privileged activity monitoring.
+- Expanded detection capabilities for privileged activity monitoring.
 - Improved detection logic for Linux security events.
 - Reorganized the repository structure and documentation.
-
+  
 ---
 
 ## In Progress
-- Auditd event filtering and noise reduction
-- SQLite-based risk scoring engine
-- Context-aware event correlation
-- Risk-based automated response
+- Auditd event filtering and normalization
+- File Integrity Monitoring (FIM)
+- Additional detection scenario validation
 
 ---
 
 ## Future Improvements
 - MITRE ATT&CK mapping for custom detection rules
-- File Integrity Monitoring (FIM)
+- Context-aware event correlation
+- SQLite-based threat scoring engine
+- Risk-based automated response
 - Log visualization with OpenSearch Dashboards
-- Detection coverage expansion for additional attack techniques
 - Enhanced threat hunting capabilities
   
 ---
@@ -134,9 +146,10 @@ Current Version: **v3.0** (Privilege Escalation Detection & Auditd Integration)
 | v1.x | Wazuh deployment, basic monitoring, SSH brute-force detection, and Active Response | ✅ |
 | v2.x | Telegram notification integration and Root Activity monitoring | ✅ |
 | v3.0 | Privilege Escalation detection and Auditd integration | ✅ |
-| v3.1 | Auditd event filtering and Threat Scoring Engine | 🚧 |
-| v3.2 | Context-aware Event Correlation and Risk-Based Response | ⏳ |
-| v4.0 | File Integrity Monitoring (FIM) and MITRE ATT&CK mapping | ⏳ |
+| v3.1 | Auditd event filtering, normalization, and detection scenario completion | 🚧 |
+| v3.2 | MITRE ATT&CK mapping and context-aware event correlation | ⏳ |
+| v3.3 | SQLite-based Threat Scoring Engine and Risk-Based Response | ⏳ |
+| v4.0 | End-to-end integration, validation, and final documentation | ⏳ |
 
 ---
 
