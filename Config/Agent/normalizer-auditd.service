@@ -1,0 +1,13 @@
+[Unit]
+Description=Wazuh Audit Log Normalizer
+After=auditd.service
+Wants=auditd.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c '/usr/bin/tail -F /var/log/audit/audit.log | /usr/bin/python3 /var/ossec/normalizer/normalizer.py'
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
