@@ -1,0 +1,10 @@
+[Unit]
+Description=Clear Wazuh Manager Temporary Log
+Before=wazuh-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/truncate -s 0 /var/lib/wazuh/audit-for-manager.json
+
+[Install]
+WantedBy=multi-user.target
